@@ -3,6 +3,7 @@ import json
 import joblib
 import os
 
+from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
@@ -25,7 +26,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # 4. Train Model
-model = Lasso(alpha=0.1)
+model = Ridge(alpha=1.0)
+
 model.fit(X_train, y_train)
 
 # 5. Evaluate Model
